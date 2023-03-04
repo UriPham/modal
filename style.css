@@ -1,0 +1,136 @@
+:root {
+    --primary-color: #e26e70;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: linear-gradient( 45deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 50%, rgb(255, 204, 112) 100% );
+}
+
+.modal__open {
+    width: 190px;
+    height: 65px;
+    font-size: 20px;
+    font-weight: 400;
+    transition: 0.5s;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.modal__open:hover {
+
+    transform: scale(1.2);
+    background: hsla(0, 3%, 94%, 0.502);
+
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal__inner {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 7px;
+    overflow: hidden;
+    border: none;
+    animation: modalShow 0.6s linear;
+    outline: none;
+}
+
+.modal__header {
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 550;
+}
+
+.modal__header i {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal__header i:hover {
+    transform: scale(1.2);
+}
+
+.modal__body {
+    padding: 15px;;
+}
+
+.modal__body h2 {
+    margin: 10px 0;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.modal__body p {
+    font-weight: 540;
+    font-size: 16px;
+}
+
+.modal__footer {
+    padding: 0 15px 15px;
+    position: relative;
+}
+
+.modal__footer button {
+    position: absolute;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    right: 15px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.modal__footer button:hover {
+    transform: scale(1.2);
+}
+
+.hide {
+    display: none;
+}
+
+@keyframes modalShow {
+    from {
+        top: -150px;
+        opacity: 0;
+    }
+    to {
+        top: 50%;
+        opacity: 1;
+    }
+}
